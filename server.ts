@@ -62,7 +62,7 @@ app.get("/api/config", (req, res) => {
   res.json({ googleClientId: process.env.GOOGLE_CLIENT_ID || "" });
 });
 
-// 1. Generate certificate background using Gemini Lite Image model (Nano Banana)
+// 1. Generate certificate background using Gemini Lite Image model
 app.post("/api/generate-background", async (req, res) => {
   try {
     const { prompt, style } = req.body;
@@ -109,7 +109,7 @@ app.post("/api/generate-badge", async (req, res) => {
     }
 
     const ai = getAI();
-    const finalPrompt = `A high-quality, professional, transparent-looking seal, badge, or 3D hologram for a certificate. Theme: ${prompt}. Visual style: ${style}. Elements of 'nano banana' aesthetic should be incorporated elegantly into the seal's center or border. The design should be centered, circular or emblem-shaped, and act as an official stamp. The background should be completely white or solid so it can be extracted, but ideally a clean emblem.`;
+    const finalPrompt = `A high-quality, professional, transparent-looking seal, badge, or 3D hologram for a certificate. Theme: ${prompt}. Visual style: ${style}. The design should be centered, circular or emblem-shaped, and act as an official stamp. The background should be completely white or solid so it can be extracted, but ideally a clean emblem.`;
 
     const response = await withRetry(() => ai.models.generateImages({
       model: "imagen-4.0-generate-001",

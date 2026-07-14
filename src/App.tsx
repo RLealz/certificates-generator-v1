@@ -182,7 +182,7 @@ export default function App() {
     }
   };
 
-  // call server API /api/generate-background (Nano Banana Image Gen)
+  // call server API /api/generate-background (AI Image Gen)
   const handleGenerateBg = async () => {
     if (!bgPrompt) {
       showNotification("error", "Please type a background description style.");
@@ -210,10 +210,10 @@ export default function App() {
       };
 
       setTemplate(generatedTemplate);
-      showNotification("success", "✨ Bespoke background generated using Nano Banana Image Gen!");
+      showNotification("success", "✨ Bespoke background generated using AI Image Gen!");
     } catch (err: any) {
       console.error(err);
-      showNotification("error", err.message || "Could not run Nano Banana image generation. Ensure your API secrets are configured correctly.");
+      showNotification("error", err.message || "Could not run AI image generation. Ensure your API secrets are configured correctly.");
     } finally {
       setIsGeneratingBg(false);
     }
@@ -307,7 +307,7 @@ export default function App() {
           <div className="flex items-center gap-4">
             <div className="hidden sm:flex items-center gap-2 px-3 py-1 bg-slate-850 rounded-full border border-slate-800">
               <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span>
-              <span className="text-[9px] uppercase font-bold tracking-widest text-slate-300">Nano Banana Online</span>
+              <span className="text-[9px] uppercase font-bold tracking-widest text-slate-300">AI Image Generator</span>
             </div>
 
             {/* Wizard Progress Stepper Nav */}
@@ -362,11 +362,11 @@ export default function App() {
               {/* Left Column Controls: Gen and Edit Background */}
               <div className="lg:col-span-4 space-y-5">
                 
-                {/* 1. Nano Banana Background Generator */}
+                {/* 1. AI Background Generator */}
                 <div className="bg-slate-900 border border-slate-800 rounded-xl p-4 shadow-sm space-y-3.5">
                   <div className="flex items-center gap-2 border-b border-slate-800 pb-2">
                     <Cpu className="w-4 h-4 text-emerald-400" />
-                    <h3 className="text-xs uppercase font-bold text-slate-400 tracking-wider">Option A: Nano Banana AI Gen</h3>
+                    <h3 className="text-xs uppercase font-bold text-slate-400 tracking-wider">Option A: AI Image Gen</h3>
                   </div>
                   <div className="space-y-3">
                     <div>
