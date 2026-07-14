@@ -1,0 +1,6 @@
+{
+  "name": "Workshop Certificate Generator",
+  "description": "Create elegant workshop certificates using AI background generation (Nano Banana) and Gemini text generation. Upload existing certificates to automatically replicate layout and bulk generate for recipient lists.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
